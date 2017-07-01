@@ -11,9 +11,10 @@ const passport   = require('passport');
 
 const passportSetup = require('./config/passport');
 passportSetup(passport);
+require('dotenv').config();
 
+mongoose.connect(process.env.MONGODB_URI);
 
-mongoose.connect('mongodb://localhost/authangular');
 
 const app = express();
 
